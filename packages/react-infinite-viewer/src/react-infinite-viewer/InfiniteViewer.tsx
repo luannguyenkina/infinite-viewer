@@ -23,8 +23,9 @@ export default class InfiniteViewer extends React.PureComponent<Partial<Infinite
     private verticalScrollElement!: HTMLElement;
     public render() {
         const className = this.props.className;
+        const elementId = this.props.id;
 
-        return <div className={`${className || ""} ${CLASS_NAME}`} ref={ref(this, "containerElement")}>
+        return <div id={elementId} className={`${className || ""} ${CLASS_NAME}`} ref={ref(this, "containerElement")}>
             <div className="infinite-viewer-wrapper" ref={ref(this, "wrapperElement")}>
                 <div className="infinite-viewer-scroll-area" ref={ref(this, "scrollAreaElement")}></div>
                 {this.props.children}
